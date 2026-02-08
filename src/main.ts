@@ -6,9 +6,12 @@ import { Controls } from './ui/Controls';
 import { ContextMenu } from './ui/ContextMenu';
 
 const simulation = new Simulation();
+const controls = new Controls(simulation); // Create UI first
 const renderer = new Renderer(simulation);
-const controls = new Controls(simulation);
 const contextMenu = new ContextMenu();
-new Interaction(simulation, renderer, contextMenu, controls);
 
-console.log('Kinet Sandbox 2.0 Loaded');
+const interaction = new Interaction(simulation, renderer, contextMenu, controls);
+controls.setInteraction(interaction);
+renderer.setInteraction(interaction);
+
+console.log('Kinet V3: Robust Spring Tool & Customization Ready');
