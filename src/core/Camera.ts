@@ -2,8 +2,8 @@ export class Camera {
     x: number = 0;
     y: number = 0;
     zoom: number = 1;
-    minZoom: number = 0.1;
-    maxZoom: number = 5.0;
+    minZoom: number = 0.02; // Allow zooming VERY far out
+    maxZoom: number = 10.0; // Allow zooming very close
 
     constructor() {
         this.x = window.innerWidth / 2;
